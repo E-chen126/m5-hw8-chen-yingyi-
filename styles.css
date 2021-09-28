@@ -1,11 +1,87 @@
 :root {
-  --primary-color: #6003C3;
-  --white: #FFFFFF;
-  --box-color-1: #FCFF00;
-  --box-color-2: #57FFC9;
-  --box-color-3: #A5FF01;
+  --primary-color: #6003c3;
+  --white: #ffffff;
+  --box-color-1: #fcff00;
+  --box-color-2: #57ffc9;
+  --box-color-3: #a5ff01;
 }
 
 body {
-  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-family: "Bebas Neue", Impact, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+}
+
+header {
+  background-color: #6003c3;
+  text-align: center;
+}
+
+h1 {
+  font-size: 5rem;
+  color: #ffffff;
+  padding: 20px 5%;
+  margin: auto;
+  width: 100%;
+  letter-spacing: 2px;
+}
+
+#message {
+  text-align: center;
+  color: #6003c3;
+  font-size: 1.5rem;
+  margin: 20px auto;
+}
+
+.box {
+  border: 10px solid #6003c3;
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  color: #6003c3;
+}
+
+#box-1 {
+  background-color: #fcff00;
+}
+#box-2 {
+  background-color: #57ffc9;
+}
+#box-3 {
+  background-color: #a5ff01;
+}
+
+@media (min-width: 500px) {
+  .boxes {
+    display: flex;
+  }
+}
+
+@media (min-width: 700px) {
+  .box {
+    margin: 0 20px;
+  }
+  .boxes {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .box {
+    margin: 0 30px;
+    width: 200px;
+    height: 200px;
+  }
 }
