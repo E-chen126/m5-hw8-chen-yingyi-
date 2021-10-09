@@ -19,14 +19,28 @@ var losses = document.getElementById('losses');
 var boxes = document.querySelectorAll('.box');
 //console.log(boxes);
 
+// create a random number between 1-3 and store it to a variable
+// This number will represent the winning box
+
 function randomIntFromInterval(min,max) {
     return Math.floor(Math.random()*(max-min+1)+min)
 }
 const rndInt = randomIntFromInterval(1,3);
+//console.log(rndInt);
+
+// within each click event...
+// determine which box was clicked with 'this.textContent' or event.target.textContent
+// determine if the box clicked is equal to the random number
+// if the numbers match, display a winning message by changing the text content of the div#message element
+// if the numbers match, increment wins and display the win count in div#wins
+
+// if the numbers don't match, change the div#message element's text to a random losing message from the array above
+// if the numbers don't match, increment losses and display the loss count in div#losses
 
 for(i=0; i<3; i++) {
     //console.log(i);
     boxes[i].addEventListener("click",function(){
+        // convert that value to a Number and store it to a variable
         var getNumber = parseInt(this.textContent);
         if (getNumber === rndInt) {
             message.textContent = "Congratulation!You won!";
@@ -43,24 +57,3 @@ for(i=0; i<3; i++) {
     }, false);
 }
 
-// within each click event...
-// determine which box was clicked with 'this.textContent' or event.target.textContent
-// convert that value to a Number and store it to a variable
-
-
-// create a random number between 1-3 and store it to a variable
-
-//console.log(rndInt);
-// This number will represent the winning box
-
-// determine if the box clicked is equal to the random number
-// if the numbers match, display a winning message by changing the text content of the div#message element
-// if the numbers match, increment wins and display the win count in div#wins
-
-
-
-
-
-
-// if the numbers don't match, change the div#message element's text to a random losing message from the array above
-// if the numbers don't match, increment losses and display the loss count in div#losses

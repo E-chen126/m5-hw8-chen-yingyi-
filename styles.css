@@ -98,3 +98,7 @@ h1 {
 div#wins {
   margin-right: 3rem;
 }
+
+.box {
+  cursor: pointer;
+}
