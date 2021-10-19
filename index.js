@@ -22,11 +22,12 @@ var boxes = document.querySelectorAll('.box');
 // create a random number between 1-3 and store it to a variable
 // This number will represent the winning box
 
-function randomIntFromInterval(min,max) {
-    return Math.floor(Math.random()*(max-min+1)+min)
+const randomNumber = (min,max)=>{
+    return Math.floor(Math.random()*(max-min+1+min))
 }
-const rndInt = randomIntFromInterval(1,3);
-//console.log(rndInt);
+
+//console.log(randomNumber(1,3));
+
 
 // within each click event...
 // determine which box was clicked with 'this.textContent' or event.target.textContent
@@ -42,7 +43,8 @@ for(i=0; i<3; i++) {
     boxes[i].addEventListener("click",function(){
         // convert that value to a Number and store it to a variable
         var getNumber = parseInt(this.textContent);
-        if (getNumber === rndInt) {
+        var random = randomNumber(1,3);
+        if (getNumber === random) {
             message.textContent = "Congratulation!You won!";
             winsTotal += 1;
             wins.innerHTML = "WINS:" + winsTotal
